@@ -10,23 +10,23 @@ const gulp = require('gulp'),
 const jsFiles=[
     'node_modules/jquery/dist/jquery.js',
     'node_modules/slick-carousel/slick/slick.js'
-];
+]
 const cssFiles=[
     'node_modules/slick-carousel/slick/slick.css',
     'markup/css/style.css'
-];
+]
 const cssListen=[
     'markup/scss/style.scss'
-];
+]
 
 const jsListen=[
     'markup/js/jquery.main.js'
-];
+]
 
 //for css
 function styles(){
     let cssFile = gulp.src(cssFiles, {allowEmpty:true})
-            .pipe(concat('css-files.css'));
+        .pipe(concat('css-files.css'));
 
     let sassFile = gulp.src('markup/scss/style.scss')
         .pipe(sass({outputStyle:'expanded'}))
@@ -63,7 +63,7 @@ function watch(){
 
 // for scripts
 function scripts(){
-    return gulp.src(jsFiles, {allowEmpty:true})
+    return gulp.src(jsFiles)
         .pipe(concat('scripts.js'))
         .pipe(uglify({
             toplevel: true // макимальное сжатие

@@ -1,0 +1,63 @@
+/**VARIABLES**/
+
+/*color*/
+$main-text: #333;
+$light-text: #b5b5b5;
+$light-grey-text: #797979;
+$dark-text: #0f0f0f;
+$link: #ffd942;
+$placeholder: #c2c2c2;
+$input-text: #565656;
+$grey-line: #f1f1f5;
+$white: #ffffff;
+
+/*font*/
+$font-family: "Work Sans", Arial, Helvetica, sans-serif;
+$font-family-quote: "Libre Baskerville",  "Times New Roman", serif;
+
+/*animation*/
+@mixin transition($time: .6s, $prop: all) {
+  -webkit-transition:$prop $time ease-in-out;
+  -moz-transition:$prop $time ease-in-out;
+  -ms-transition:$prop $time ease-in-out;
+  -o-transition:$prop $time ease-in-out;
+  transition:$prop $time ease-in-out;
+}
+
+/*size space*/
+$small-space: 30px;
+$big-space: 55px;
+$space-mobile: 5vw;
+
+/*breakpoint*/
+$desktop: 1440px;
+$laptop: 1280px;
+$tablet: 768px;
+
+/*mixin*/
+@mixin laptop-up {
+  @media only screen and (min-width: $laptop) {
+    @content
+  }
+}
+
+@mixin tablet-up {
+  @media only screen and (min-width: $tablet) {
+    @content
+  }
+}
+
+@mixin flexBlock($align: center, $justify: center){
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: $align;
+  -ms-align-items: $align;
+  align-items: $align;
+  -webkit-justify-content: $justify;
+  -ms-justify-content: $justify;
+  justify-content: $justify;
+}
